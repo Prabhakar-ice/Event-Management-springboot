@@ -1,0 +1,15 @@
+
+body {
+         background-size: cover;
+         background-color: #f8f9fa; /* Light background color as fallback */
+     }
+     .navbar {
+         background-color: #007bff !important; /* Blue navbar */
+     }
+     .navbar-text {
+         color: #ffffff !important; /* White text */
+     }
+     .btn-danger {
+         background-color: #dc3545;
+         border-color: #dc3545;
+     }

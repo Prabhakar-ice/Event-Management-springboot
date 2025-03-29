@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="text/javascript" src="javascripts/joinevents.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-text text-dark me-auto">Welcome,  <strong id="usernamedisplay">U</strong></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link " href="user.html">My Home Page</a></li>
+                    <li class="nav-item"><a class="nav-link active" >Join Events</a></li>
+                   
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="btn btn-danger" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            
+            
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <h2 class="text-center text-dark">All Event Details</h2>
+        
+        <!-- Search Box and Add Button -->
+        <div class="mb-3 d-flex align-items-center">
+            <input type="text" id="searchBox" class="form-control me-2" placeholder="Search events...">
+            
+        </div>
+        
+        <table class="table table-light table-striped mt-3">
+            <thead class="table-primary text-center">
+                <tr>
+                    <th width="100">Event Name</th>
+                    <th width="200">Description</th>
+                    <th width="50">Time</th>
+                    <th width="100">Location</th>
+                    <th width="50">Date</th>
+                    <th width="50">Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody align="center" id="allevents"></tbody>
+        </table>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+    
+    	const username = sessionStorage.getItem("username");
+    	document.getElementById("usernamedisplay").innerText = username.toUpperCase();
+    	
+    	window.onload = function(){
+    		showallevents();
+    	};
+    
+    </script>
+</body>
+</html>
